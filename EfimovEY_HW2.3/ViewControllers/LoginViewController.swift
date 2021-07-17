@@ -16,8 +16,8 @@ class LoginViewController: UIViewController {
     let myUser = User.examp()
     
     
-     private var login = ""
-    private var password = ""
+    private var login: String?
+    private var password: String?
     
     
     override func viewDidLoad() {
@@ -37,8 +37,17 @@ class LoginViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let vsd = segue.destination as? WelcomeViewController else { return }
-        vsd.userWelcome = nameLoginTF.text
+         let tabBarController = segue.destination as! UITabBarController
+        guard let viewControllers = tabBarController.viewControllers else { return }
+        for viewController in viewControllers {
+            if let welcomeVC = viewController as? WelcomeViewController {
+                welcomeVC.userWelcome = myUser
+            } else if let navigationVC = viewController as? UINavigationController {
+                let profileVC = navigationVC.topViewController
+                    as! ProfileViewController
+                profileVC.userProfile = myUser
+            }
+        }
     }
     
     @IBAction func logIn() {
@@ -54,8 +63,9 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func helpButton(_ sender: UIButton) {
-        sender.tag == 1 ? toCallAlertAttention(title: nil, message: login) :
-            toCallAlertAttention(title: nil, message: password)
+        sender.tag == 1 ? toCallAlertAttention(title: nil,
+                                               message: login!) :
+            toCallAlertAttention(title: nil, message: password!)
     }
     
     @IBAction func unwindGoToLoginVC (send: UIStoryboardSegue) {

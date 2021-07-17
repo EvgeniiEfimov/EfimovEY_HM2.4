@@ -9,11 +9,15 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
+    @IBOutlet weak var image: UIImageView!
+    
+    var userProfile: [User]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
-        
+//        image.image = UIImage(named: "фото")
+//        image.layer.cornerRadius = 5
+    
     }
     
 }

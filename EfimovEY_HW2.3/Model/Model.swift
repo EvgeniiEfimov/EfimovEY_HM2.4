@@ -17,17 +17,20 @@ struct User {
                   password: "Efimov",
                   people: .init(name: "Евгений",
                                 surname: "Ефимов",
-                                text: ".....")),
-         User(login: "Artem",
-              password: "Safronov",
-              people: .init(name: "Артём",
-                            surname: "Сафронов",
-                            text: "1111111"))
+                                text: ".....",
+                                image: "Фото")),
+//         User(login: "Artem",
+//              password: "Safronov",
+//              people: .init(name: "Артём",
+//                            surname: "Сафронов",
+//                            text: "1111111",
+//                            image: <#String#>))
         ]
 }
 struct People {
     let name: String
     let surname: String
     let text: String
+    let image: String
 }
 }

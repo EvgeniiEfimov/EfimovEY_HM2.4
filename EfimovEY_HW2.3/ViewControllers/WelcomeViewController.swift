@@ -10,7 +10,9 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
     
-    var userWelcome: String?
+    var userWelcome: [User]?
+    var name: String?
+    var surname: String?
     
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var exitButton: UIButton!
@@ -18,7 +20,11 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let user = userWelcome else { return }
-        welcomeLabel.text = "Welcome, \(user)"
+        for value in user {
+            name = value.people.name
+            surname = value.people.surname
+        }
+        welcomeLabel.text = "Welcome, \(name ?? "") \(surname ?? "")"
         exitButton.layer.cornerRadius = 6
     }
 
