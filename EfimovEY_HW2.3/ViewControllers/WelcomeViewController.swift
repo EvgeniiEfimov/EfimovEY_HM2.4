@@ -11,11 +11,16 @@ import UIKit
 class WelcomeViewController: UIViewController {
     
     var userWelcome: [User]?
-    var name: String?
-    var surname: String?
+    private var name = ""
+    private var surname = ""
+    private var image = ""
     
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var exitButton: UIButton!
+    @IBOutlet weak var startImage: UIImageView!
+    @IBOutlet weak var nameLabelString: UILabel!
+    @IBOutlet weak var viewFrame: UIView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,9 +28,14 @@ class WelcomeViewController: UIViewController {
         for value in user {
             name = value.people.name
             surname = value.people.surname
+            image = value.people.image.image1
+            welcomeLabel.text = value.welcome
+            
         }
-        welcomeLabel.text = "Welcome, \(name ?? "") \(surname ?? "")"
-        exitButton.layer.cornerRadius = 6
+        nameLabelString.text = "\(name) \n    \(surname)"
+        exitButton.layer.cornerRadius = 5
+        viewFrame.layer.cornerRadius = 5
+        startImage.image = UIImage(named: image)
     }
 
 }

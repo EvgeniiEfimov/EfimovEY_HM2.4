@@ -8,6 +8,7 @@
 import Foundation
 
 struct User {
+    let welcome = "Ваш покорный слуга:"
     let login: String
     let password: String
     let people: People
@@ -18,7 +19,11 @@ struct User {
                   people: .init(name: "Евгений",
                                 surname: "Ефимов",
                                 text: ".....",
-                                image: "Фото")),
+                                image: .init(image1: "Photo1",
+                                             image2: "Photo2",
+                                             image3: "Photo3",
+                                             image4: "Photo4",
+                                             image5: "Photo5"))),
 //         User(login: "Artem",
 //              password: "Safronov",
 //              people: .init(name: "Артём",
@@ -31,6 +36,13 @@ struct People {
     let name: String
     let surname: String
     let text: String
-    let image: String
+    let image: Image
 }
+    struct Image {
+        let image1: String
+        let image2: String
+        let image3: String
+        let image4: String
+        let image5: String
+    }
 }
