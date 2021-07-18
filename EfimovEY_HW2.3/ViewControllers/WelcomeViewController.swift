@@ -31,8 +31,10 @@ class WelcomeViewController: UIViewController {
             image = value.people.image.image1
             welcomeLabel.text = value.welcome
             
+
         }
-        nameLabelString.text = "\(name) \n    \(surname)"
+        
+        nameLabelString.text = "\(surname) \n    \(name)"
         exitButton.layer.cornerRadius = 5
         viewFrame.layer.cornerRadius = 5
         startImage.image = UIImage(named: image)

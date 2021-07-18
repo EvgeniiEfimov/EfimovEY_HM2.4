@@ -9,21 +9,31 @@ import UIKit
 
 class FinalViewController: UIViewController {
 
+    @IBOutlet weak var imageIV3: UIImageView!
+    @IBOutlet weak var imageIV4: UIImageView!
+    @IBOutlet weak var imageIV5: UIImageView!
+    
+    var user: [User]?
+    
+    private var image3 = ""
+    private var image4 = ""
+    private var image5 = ""
+ 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        guard let arrayValueUser = user else { return }
+        for value in arrayValueUser {
+            image3 = value.people.image.image3
+            image4 = value.people.image.image4
+            image5 = value.people.image.image5
+        }
+        imageIV3.image = UIImage(named: image3)
+        imageIV4.image = UIImage(named: image4)
+        imageIV5.image = UIImage(named: image5)
+      
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
