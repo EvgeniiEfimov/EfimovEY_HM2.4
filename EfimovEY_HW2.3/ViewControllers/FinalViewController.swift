@@ -32,8 +32,5 @@ class FinalViewController: UIViewController {
         imageIV3.image = UIImage(named: image3)
         imageIV4.image = UIImage(named: image4)
         imageIV5.image = UIImage(named: image5)
-      
     }
-    
-
 }

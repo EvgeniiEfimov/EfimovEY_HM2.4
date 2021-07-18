@@ -30,8 +30,6 @@ class WelcomeViewController: UIViewController {
             surname = value.people.surname
             image = value.people.image.image1
             welcomeLabel.text = value.welcome
-            
-
         }
         
         nameLabelString.text = "\(surname) \n    \(name)"
@@ -39,5 +37,4 @@ class WelcomeViewController: UIViewController {
         viewFrame.layer.cornerRadius = 5
         startImage.image = UIImage(named: image)
     }
-
 }
