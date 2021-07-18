@@ -10,17 +10,17 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
     
-    var userWelcome: [User]?
-    private var name = ""
-    private var surname = ""
-    private var image = ""
-    
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var exitButton: UIButton!
     @IBOutlet weak var startImage: UIImageView!
     @IBOutlet weak var nameLabelString: UILabel!
     @IBOutlet weak var viewFrame: UIView!
     
+    var userWelcome: [User]?
+    
+    private var name = ""
+    private var surname = ""
+    private var image = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()

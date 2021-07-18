@@ -13,7 +13,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordLoginTF: UITextField!
     @IBOutlet weak var logInButton: UIButton!
     
-    let myUser = User.examp()
+    private let myUser = User.examp()
     
     
     private var login: String?
