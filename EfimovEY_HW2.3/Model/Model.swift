@@ -18,9 +18,12 @@ struct User {
                   password: "Efimov",
                   people: .init(name: "Евгений",
                                 surname: "Ефимов",
+                                patronymic: "Юрьевич",
+                                age: 23,
+                                city: "Омск",
                                 text: ".....",
                                 image: .init(image1: "Photo1",
-                                             image2: "Photo2",
+                                             image2: "Pfoto2",
                                              image3: "Photo3",
                                              image4: "Photo4",
                                              image5: "Photo5"))),
@@ -35,6 +38,9 @@ struct User {
 struct People {
     let name: String
     let surname: String
+    let patronymic: String
+    let age: Int
+    let city: String
     let text: String
     let image: Image
 }

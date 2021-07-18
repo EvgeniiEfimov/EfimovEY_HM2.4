@@ -45,7 +45,7 @@ class LoginViewController: UIViewController {
             } else if let navigationVC = viewController as? UINavigationController {
                 let profileVC = navigationVC.topViewController
                     as! ProfileViewController
-                profileVC.userProfile = myUser
+                profileVC.user = myUser
             }
         }
     }

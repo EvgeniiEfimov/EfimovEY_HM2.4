@@ -9,15 +9,32 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
-    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var imageProfile: UIImageView!
+    @IBOutlet weak var nameLabelString: UILabel!
+    @IBOutlet weak var surnameLabelString: UILabel!
+    @IBOutlet weak var patronymicLabelString: UILabel!
+    @IBOutlet weak var ageLabelInt: UILabel!
+    @IBOutlet weak var cityLabelString: UILabel!
+    @IBOutlet weak var textTV: UITextView!
     
-    var userProfile: [User]?
+    var image: String!
+    
+    var user: [User]?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        image.image = UIImage(named: "фото")
-//        image.layer.cornerRadius = 5
-    
-    }
+        guard let userProfile = user else { return }
+        for value in userProfile {
+            image = value.people.image.image2
+            nameLabelString.text = value.people.name
+            surnameLabelString.text = value.people.surname
+            patronymicLabelString.text = value.people.patronymic
+            ageLabelInt.text = String(value.people.age)
+            cityLabelString.text = value.people.city
+            textTV.text = value.people.text
+                        }
+        imageProfile.image = UIImage(named: image)
+        }
     
 }
